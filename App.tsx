@@ -5,6 +5,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
+function Header() {
+  return (
+    <View style={ styles.header }>
+      <Text style={{ color: 'white' }}>Hejhejh</Text>
+      <Image source={require('./assets/logo.png')}
+      style={{ width: 50, height: 50 }} />
+    </View>
+  )
+}
+
 function HomeScreen() {
   return (
     <View style={ styles.container }>
@@ -17,16 +27,7 @@ function Search() {
   return (
     <View style={ styles.container }>
       <Text>Search your favourite movie</Text>
-      <TextInput
-        style={{
-          height: 40,
-          width: 250,
-          borderColor: 'gray',
-          borderWidth: 1,
-          marginTop: 30,
-          paddingLeft: 20,
-          backgroundColor: 'white',
-        }}
+      <TextInput style={styles.inputField}
         defaultValue=""
       />
     </View>
@@ -46,6 +47,7 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      <Header />
       <Tab.Navigator 
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -82,9 +84,25 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    top: 0,
     backgroundColor: '#ccc',
     alignItems: 'center',
-    justifyContent: 'center',
   },
+  inputField: {
+    height: 40,
+    width: 250,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 30,
+    paddingLeft: 20,
+    backgroundColor: 'white',
+  },
+  header: {
+    backgroundColor: '#000',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 10000,
+    height: 100,
+  }
 
 });
