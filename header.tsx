@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, } from 'react-native';
 
+const image = { uri:'https://github.com/stonetwix/react-native-app/blob/master/assets/logo-movieapp.png?raw=true'};
 function Header() {
     return (
-      <View style={ styles.header }>
-        <Text style={{ color: 'white' }}>Hejhejh</Text>
-        <Image source={require('./assets/logo.png')}
-        style={{ width: 50, height: 50 }} />
+      <View style={ styles.header }>     
+        <Image source={image}
+        style={{width: 150, height: 50, marginTop: 40}}/>
       </View>
     )
   }
@@ -16,7 +16,7 @@ function Header() {
         backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 10000,
+        width: 430,
         height: 100,
       }
     

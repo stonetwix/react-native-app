@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 function WatchList() {
     return (
       <View style={ styles.container }>
-        <Text>WatchList</Text>
+        <Text style={ styles.titleText }>My watch list</Text>
       </View>
     );
   }
@@ -15,6 +15,14 @@ function WatchList() {
       top: 0,
       backgroundColor: '#ccc',
       alignItems: 'center',
+    },
+    titleText: {
+        fontSize: 35, 
+        fontWeight: 'bold',
+        color: '#333',
+        textAlign: 'center',
+        marginTop: 20,
+        padding: 30,
     }
   });
 
