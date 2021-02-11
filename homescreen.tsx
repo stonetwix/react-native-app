@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TextInput, } from 'react-native';
 import Button from 'react-native-button';
 
-const image = { uri: "assets/bg-home.png" };
+const image = { uri: "https://github.com/stonetwix/react-native-app/blob/master/assets/bg-home.png?raw=true" };
 
 function HomeScreen() {
     return (
@@ -45,7 +45,7 @@ function HomeScreen() {
         width: 250,
         borderColor: 'gray',
         borderWidth: 1,
-        marginTop: 30,
+        marginTop: 10,
         paddingLeft: 20,
         backgroundColor: 'white',
     },
@@ -57,10 +57,12 @@ function HomeScreen() {
         fontWeight: 'bold',
     },
     titleText: {
-        fontSize: 30, 
+        fontSize: 40, 
         fontWeight: 'bold',
+        color: 'white',
         textAlign: 'center',
         marginTop: 20,
+        padding: 30,
     },
     image: {
         flex: 1,
