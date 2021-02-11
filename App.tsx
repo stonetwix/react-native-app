@@ -4,43 +4,11 @@ import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+import HomeScreen from './homescreen';
+import WatchList from './watchlist';
+import Header from './header';
 
-function Header() {
-  return (
-    <View style={ styles.header }>
-      <Text style={{ color: 'white' }}>Hejhejh</Text>
-      <Image source={require('./assets/logo.png')}
-      style={{ width: 50, height: 50 }} />
-    </View>
-  )
-}
 
-function HomeScreen() {
-  return (
-    <View style={ styles.container }>
-      <Text style={{ fontSize: 50, fontWeight: 'bold' }}>Home!</Text>
-    </View>
-  );
-}
-
-function Search() {
-  return (
-    <View style={ styles.container }>
-      <Text>Search your favourite movie</Text>
-      <TextInput style={styles.inputField}
-        defaultValue=""
-      />
-    </View>
-  );
-}
-
-function WatchList() {
-  return (
-    <View style={ styles.container }>
-      <Text>WatchList</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
@@ -55,10 +23,7 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = focused
-                ? 'ios-home'
-                : 'ios-home-outline';
-            } else if (route.name === 'Search') {
-              iconName = focused ? 'ios-search-circle' : 'ios-search-circle-outline';
+                ? 'ios-home' : 'ios-home-outline';
             } else if (route.name === 'Watchlist') {
               iconName = focused ? 'ios-eye' : 'ios-eye-outline';
             }
@@ -73,36 +38,8 @@ export default function App() {
         }}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Search" component={Search} />
         <Tab.Screen name="Watchlist" component={WatchList} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    top: 0,
-    backgroundColor: '#ccc',
-    alignItems: 'center',
-  },
-  inputField: {
-    height: 40,
-    width: 250,
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginTop: 30,
-    paddingLeft: 20,
-    backgroundColor: 'white',
-  },
-  header: {
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 10000,
-    height: 100,
-  }
-
-});
