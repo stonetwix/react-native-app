@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,11 +8,11 @@ import HomeScreen from './homescreen';
 import WatchList from './watchlist';
 import Header from './header';
 
-
-
 const Tab = createBottomTabNavigator();
 
+
 export default function App() {
+
   return (
     <NavigationContainer>
       <Header />

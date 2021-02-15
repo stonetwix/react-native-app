@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, TextInput, } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TextInput } from 'react-native';
 import Button from 'react-native-button';
+import getMoviesFromApi from './App';
 
 const image = { uri: "https://github.com/stonetwix/react-native-app/blob/master/assets/bg-home.png?raw=true" };
 
@@ -21,16 +22,12 @@ function HomeScreen() {
   function SearchButton() {
     return (
         <Button
-        style={styles.button}
-        styleDisabled={{color: 'red'}}
-        onPress={() => handlePress()}>
-        Search movie
-      </Button>    
+          style={styles.button}
+          styleDisabled={{color: 'red'}}
+          >
+          Search movie
+      </Button>
     )
-  }
-
-  function handlePress() {
-      alert('button clicked');
   }
 
   const styles = StyleSheet.create({
@@ -69,14 +66,6 @@ function HomeScreen() {
         resizeMode: "cover",
         justifyContent: "center"
       },
-    video: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        left: 0,
-        bottom: 0,
-        zIndex: 100,
-    }
 });
 
 export default HomeScreen;
